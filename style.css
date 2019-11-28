@@ -108,3 +108,93 @@ footer{
 p{
     font-weight: 700;
 }
+
+@media only screen and (max-width: 600px) {
+    
+   
+    .page-list{
+        display: none;
+    }
+    #project-1{
+        flex-direction: column;
+        width: inherit;
+        height: inherit;
+        
+    }
+    #project-2{
+        flex-direction: column-reverse;
+        width: inherit;
+        padding-bottom: 10%;
+        padding-top: -10%;
+        
+        
+    }
+
+    #logo-text{
+        margin-left: 35%;
+    }
+
+    #project-1 img {
+        padding-left: 0%;
+        width: 100%;
+        padding-right: 0%;
+
+    }
+
+    #project-2 img {
+        padding-left: 0%;
+        width: 100%;
+        padding-right: 0%;
+        padding-bottom: 5%;
+
+    }
+    #content{
+        width: inherit;
+        margin:0%;
+        padding: 0% 5%    
+    }
+
+    #intro img {
+        margin: 1%;    
+    }
+    
+    footer{
+        padding-top: 50%;
+        width: inherit;
+    }
+
+    #intro img{
+        margin: 0px;
+    }
+
+    #intro{
+        margin-bottom: 7%;
+    }
+
+    #footer-wrapper {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    #footer-info {
+        
+        text-align: center;
+    }
+    #footer-info img{
+        
+        width:7%;
+    }
+
+    .page-list-footer ul {
+        align-items: center;
+        padding: 0px;
+    }
+    .page-list-footer ul li{
+        text-align: center;
+    }
+    
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%
+      }
+}
