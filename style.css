@@ -1,50 +1,70 @@
-.menu{
-    display: flex;
+#menu{
+    display: flex;  
+    padding: 15px 0px;    
     justify-content: space-between;
-    padding:2% 0%;
-    margin: 0% 10%;  
-    margin-bottom: 1%;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;            
 }
+
+#menu ul{
+    list-style: none;    
+}
+
+     #logo-text{        
+     /* temporary solution */
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    padding-left: 5px;
+}
+
+#logo-text p{        
+    /* temporary solution */
+   margin:10px;
+   
+}
+
+#page-list{
+    justify-content: end;
+}
+
+#page-list ul{
+    justify-content: left;
+}
+
 
 body { 
     font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
     margin: 0px;
 }
 
-.menu ul{
-    list-style: none;
-}
-
-#logo-text{
-    margin-left: 45%;
-    text-align: center;
-    justify-content: center;
-}
-
-.menu #logo-text{    
-    justify-content: center;
-}
 
 #logo-text img{
-    width:50px;
+    width: 50px;
+    height: 50%;
 }
 
 .page-list ul{
     display: flex;
     flex-direction: row;    
+    padding: 0px;  
 }
 
 .page-list ul li{
-    padding-left: 15px;   
+    margin: 10px; 
+    
 }
 
 #intro{
     width:100%;
-    padding-bottom: 3%;
+    
     
 }
 #intro img{
     width:inherit;
+    height: 100vh;
+    object-fit: cover;
 }
 
 #project-1 img {
@@ -59,18 +79,23 @@ body {
 }
 
 #project-1{    
+    
     display: flex;
     flex-direction: row;
     justify-content: start;
-    margin-bottom:5%;
+    padding: 30px 0px;
+    margin-bottom: 20px;
+    
 }
 
 #project-2{    
     
     display: flex;
-    flex-direction: row;
-    padding-top:8%;
+    flex-direction: row;    
     justify-content: flex-end;
+    padding: 30px 0px;
+    margin-bottom: 20px;
+   
 }
 
 h1, h4, h2{
@@ -89,15 +114,19 @@ main{
 }
 
 footer{
-    margin-top:85%;
-    background-color: lightblue;   
+    
+    background-color: lightblue;    
+    
+      
     
 }
 
 #footer-wrapper{
+    
     margin: 0% 10%;    
     display: flex;
     justify-content: space-between;
+    
 }
 
 #footer-wrapper ul{
@@ -106,10 +135,20 @@ footer{
 }
 
 p{
-    font-weight: 700;
+    font-weight: 400;
+}
+
+#social img{
+    width: 25px;
 }
 
 @media only screen and (max-width: 600px) {
+    
+    #menu{
+        padding: 10px 0px;
+        justify-content: center;
+    }
+
     
    
     .page-list{
@@ -130,14 +169,13 @@ p{
         
     }
 
-    #logo-text{
-        margin-left: 35%;
-    }
+    
 
     #project-1 img {
         padding-left: 0%;
         width: 100%;
         padding-right: 0%;
+        
 
     }
 
@@ -150,8 +188,7 @@ p{
     }
     #content{
         width: inherit;
-        margin:0%;
-        padding: 0% 5%    
+        margin:0%;    
     }
 
     #intro img {
@@ -159,16 +196,16 @@ p{
     }
     
     footer{
-        padding-top: 50%;
         width: inherit;
     }
 
     #intro img{
-        margin: 0px;
+        margin: 0px;        
     }
 
     #intro{
-        margin-bottom: 7%;
+        
+        height: auto;
     }
 
     #footer-wrapper {
@@ -197,4 +234,10 @@ p{
         top: 0;
         width: 100%
       }
+
+      #menu #logo-text {
+        margin-left: 0px;
+        text-align: center;
+        justify-content: center;
+    }
 }

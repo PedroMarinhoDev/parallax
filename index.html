@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>The Time Lapser</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.10.0/rellax.min.js"
         integrity="sha256-jyHh7xruaFLUoKPPnsSwEvYrBnzJczScRNnuh4Ysblc=" crossorigin="anonymous"></script>
@@ -14,192 +14,78 @@
 
 <body>
 
-        <script>
-               $(window).scroll(function(){
-    if ($(window).scrollTop() >= 300) {
-        $('nav').addClass('fixed-header');
-        $('nav div').addClass('visible-title');
-    }
-    else {
-        $('nav').removeClass('fixed-header');
-        $('nav div').removeClass('visible-title');
-    }
-});
-        </script>
+    
 
-    <script>
-        let counter = 2;
-        counterProj1 = 2; 
-        counterProj2 = 2;
+    <section id="intro">
 
-        var lastScrollTop = 0;
+        <img id="tl" src="img/intro/0.jpg" alt="Project Timelapse Snippet">
 
+    </section>
 
-        
+    <div id="menu">
 
-
-        window.onscroll = function (e) {
-            // print "false" if direction is down and "true" if up
-            console.log(this.oldScroll > this.scrollY);
-            
-
-
-            if (this.oldScroll < this.scrollY && document.getElementById("project2-img").offsetParent !== null) {
-                counter++;
-                document.getElementById("tl").src = "img/intro/" + counter + ".jpg";
-                
-                console.log("Going Up Image " + counter);
-                if (counter >= 290) {
-                    counter = 0;
-                    console.log("Going Up Shift" + counter);
-                }
-            }
-            else {
-                counter--;
-                document.getElementById("tl").src = "img//intro/" + counter + ".jpg";
-                console.log("Going Down Image " + counter);
-                if (counter <= 0) {
-                    counter = 290;
-                    console.log("Going Down Shift" + counter);
-                }
-            }
-
-            if (this.oldScroll < this.scrollY && document.getElementById("project2-img").offsetParent !== null) {
-                counterProj1++;
-                document.getElementById("project1-img").src = "img/project1/" + counterProj1 + ".jpg";
-                
-                console.log("project1 Going Up Image " + counterProj1);
-                if (counterProj1 >= 160) {
-                    counterProj1 = 0;
-                    console.log("project1 Going Up Shift" + counterProj1);
-                }
-            }
-            else {
-                counterProj1--;
-                document.getElementById("project1-img").src = "img/project1/" + counterProj1 + ".jpg";
-                console.log("Going Down Image " + counterProj1);
-                if (counterProj1 <= 0) {
-                    counterProj1 = 160;
-                    console.log("Going Down Shift" + counterProj1);
-                }
-            }
-
-            if (this.oldScroll < this.scrollY && document.getElementById("project2-img").offsetParent !== null) {
-                counterProj2++;
-                document.getElementById("project2-img").src = "img/project2/" + counterProj2 + ".jpg";
-                
-                console.log("project1 Going Up Image " + counterProj2);
-                if (counterProj2 >= 100) {
-                    counterProj2 = 0;
-                    console.log("project1 Going Up Shift" + counterProj2);
-                }
-            }
-            else {
-                counterProj2--;
-                document.getElementById("project2-img").src = "img/project2/" + counterProj2 + ".jpg";
-                console.log("AHHH" + counterProj2);
-                if (counterProj2 <= 0) {
-                    counterProj2 = 100;
-                    console.log("Going Down Shift" + counterProj2);
-                }
-            }
-
-
-            this.oldScroll = this.scrollY;
-        }
-
-        /* window.onscroll = function () { myFunction() };
-
-        function myFunction() { // or window.addEventListener("scroll"....
-            var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
-            if (st > lastScrollTop) {
-                // downscroll code
-                counter++;
-                document.getElementById("tl").src = "img/" + counter + ".jpg";
-
-
-            } else {
-                // upscroll code
-                counter--;
-                document.getElementById("tl").src = "img/" + counter + ".jpg";
-            }
-
-        } */
-    </script>
-
-
-    <div id="wrapper">
-
-        <div class="menu">
-            <div id="logo-text">
-                <img src="img/logo.png" alt="Logo">
-                <p>The Time Lapser</p>
-            </div>
-            <nav class="page-list">
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                </ul>
-            </nav>
-
-
+        <div id="logo-text">
+            <img src="img/logo.png" alt="Logo">
+            <p>The Time Lapser</p>
         </div>
 
-        
-        
-                <section id="intro" class="rellax" data-rellax-speed="-6">
-                        <img id="tl" src="img/intro/0.jpg" alt="Project Timelapse Snippet">
-                    </section>
-                <main id="content">
+        <nav class="page-list">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
 
-                    
+    </div>
 
-            <section id="project-1" class="rellax" data-rellax-speed="-4">
-                <img id="project1-img" src="https://blog.pond5.com/wp-content/uploads/2016/04/timelapse-header-image.jpg"
-                    alt="Project Timelapse Snippet">
-                <div >
+    <main id="content">
+
+        <section id="project-1" >
+
+            <img id="project1-img" src="img/project1/0.jpg" alt="Project Timelapse Snippet">
+
+                <div>
                     <h1>Dark Clouds</h1>
                     <h4>Location</h4>
                     <h2>Berlin</h2>
                     <h4>Nmber of Photos: </h4>
                     <h2>2500</h2>
                 </div>
-            </section>
 
+        </section>
 
+        <section id="project-2" >
 
-            <section id="project-2" class="rellax" data-rellax-speed="-4">
+            <div>
+                <h1>Around The World</h1>
+                <h4>Location: </h4>
+                <h2>World</h2>
+                <h4>Nmber of Photos: </h4>
+                <h2>2500</h2>
+            </div>
 
-                <div >
-                    <h1>Around The World</h1>
-                    <h4>Location: </h4>
-                    <h2>World</h2>
-                    <h4>Nmber of Photos: </h4>
-                    <h2>2500</h2>
-                </div>
-                <img id="project2-img" src="https://s3.amazonaws.com/pbblogassets/uploads/2014/06/Time-Lapse-Featured-Image.jpg"
-                    alt="Project Timelapse Snippet">
-            </section>
+            <img id="project2-img" src="img/project2/0.jpg" alt="Project Timelapse Snippet">
 
-        </main>
+        </section>
 
-    </div>
+    </main>
 
+    <footer >
 
-
-    <footer data-rellax-speed="-8">
         <div id="footer-wrapper">
+
             <div id="footer-info">
                 <p>Email: pedro.marinho@live.com</p>
                 <p>Phone: +46 769085134</p>
-                <p>Oppen Hours</p>
-                <div>
+                
+                <div id="social">
                     <img src="img/facebook.png" alt="Facebook Page">
                     <img src="img/instagram.png" alt="Instagram">
                     <img src="img/linkedin.png" alt="LinkedIn">
                 </div>
             </div>
+
             <nav class="page-list-footer">
                 <ul>
                     <li>Home</li>
@@ -207,8 +93,75 @@
                     <li>Contact</li>
                 </ul>
             </nav>
+
         </div>
     </footer>
+
+    <script>
+
+        let counter = 2;
+        let counterProj1 = 2;
+        let counterProj2 = 2;
+        let lastScrollTop = 0;
+
+        window.onscroll = function (e) {
+            // print "false" if direction is down and "true" if up
+            console.log(this.oldScroll > this.scrollY);
+
+            if (this.oldScroll < this.scrollY && document.getElementById("project2-img").offsetParent !== null) {
+                counter++;
+                document.getElementById("tl").src = "img/intro/" + counter + ".jpg";
+
+                if (counter >= 290) {
+                    counter = 0;                 
+                }
+            }
+            else {
+                counter--;
+                document.getElementById("tl").src = "img//intro/" + counter + ".jpg";
+               
+                if (counter <= 0) {
+                    counter = 290;              
+                }
+            }
+
+            if (this.oldScroll < this.scrollY && document.getElementById("project2-img").offsetParent !== null) {
+                counterProj1++;
+                document.getElementById("project1-img").src = "img/project1/" + counterProj1 + ".jpg";
+         
+                if (counterProj1 >= 160) {
+                    counterProj1 = 0;                   
+                }
+            }
+            else {
+                counterProj1--;
+                document.getElementById("project1-img").src = "img/project1/" + counterProj1 + ".jpg";
+               
+                if (counterProj1 <= 0) {
+                    counterProj1 = 160;                    
+                }
+            }
+
+            if (this.oldScroll < this.scrollY && document.getElementById("project2-img").offsetParent !== null) {
+                counterProj2++;
+                document.getElementById("project2-img").src = "img/project2/" + counterProj2 + ".jpg";
+               
+                if (counterProj2 >= 100) {
+                    counterProj2 = 0;                    
+                }
+            }
+            else {
+                counterProj2--;
+                document.getElementById("project2-img").src = "img/project2/" + counterProj2 + ".jpg";
+                
+                if (counterProj2 <= 0) {
+                    counterProj2 = 100;                    
+                }
+            }
+            this.oldScroll = this.scrollY;
+        }
+
+    </script>
 
 </body>
 
