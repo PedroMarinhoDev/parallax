@@ -14,14 +14,6 @@
 
 <body>
 
-    
-
-    <section id="intro">
-
-        <img id="tl" src="img/intro/0.jpg" alt="Project Timelapse Snippet">
-
-    </section>
-
     <div id="menu">
 
         <div id="logo-text">
@@ -31,31 +23,41 @@
 
         <nav class="page-list">
             <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
 
     </div>
 
-    <main id="content">
+    <section id="intro" class="rellax" data-rellax-speed="-1">
 
-        <section id="project-1" >
+        <img id="tl" src="img/intro/0.jpg" alt="Project Timelapse Snippet">
+
+    </section>
+
+
+
+    <h1 id="title" class="rellax" data-rellax-speed="-2">Timelapse Projects</h1>
+
+    <main id="content" class="rellax" data-rellax-speed="-3">
+
+        <section id="project-1" class="rellax" data-rellax-speed="-2">
 
             <img id="project1-img" src="img/project1/0.jpg" alt="Project Timelapse Snippet">
 
-                <div>
-                    <h1>Dark Clouds</h1>
-                    <h4>Location</h4>
-                    <h2>Berlin</h2>
-                    <h4>Nmber of Photos: </h4>
-                    <h2>2500</h2>
-                </div>
+            <div id="project1-text">
+                <h1>Dark Clouds</h1>
+                <h4>Location</h4>
+                <h2>Berlin</h2>
+                <h4>Nmber of Photos: </h4>
+                <h2>2500</h2>
+            </div>
 
         </section>
 
-        <section id="project-2" >
+        <section id="project-2" class="rellax" data-rellax-speed="-3">
 
             <div>
                 <h1>Around The World</h1>
@@ -71,14 +73,14 @@
 
     </main>
 
-    <footer >
+    <footer class="rellax" data-rellax-speed="-6">
 
         <div id="footer-wrapper">
 
             <div id="footer-info">
-                <p>Email: pedro.marinho@live.com</p>
-                <p>Phone: +46 769085134</p>
-                
+                <p><b>Email: </b> pedro.marinho@live.com</p>
+                <p><b>Phone: </b>+46 769 09 51 33</p>
+
                 <div id="social">
                     <img src="img/facebook.png" alt="Facebook Page">
                     <img src="img/instagram.png" alt="Instagram">
@@ -88,9 +90,9 @@
 
             <nav class="page-list-footer">
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
 
@@ -98,68 +100,101 @@
     </footer>
 
     <script>
+        var el = document.getElementById("tl");
 
-        let counter = 2;
-        let counterProj1 = 2;
-        let counterProj2 = 2;
+
+        function isScrolledIntoView(el) {
+            var rect = el.getBoundingClientRect();
+            var elemTop = rect.top;
+            var elemBottom = rect.bottom;
+
+            // Only completely visible elements return true:
+            var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+            // Partially visible elements return true:
+            //isVisible = elemTop < window.innerHeight && elemBottom >= 0;
+            return isVisible;
+
+            console.log("Is visible: " + isVisible)
+        }
+
+        let introCounter = 2;
+        let menuCounter = 2;
+        let project1Counter = 2;
+        let project2Counter = 2;
         let lastScrollTop = 0;
 
+
+        document.getElementById("menu").style.opacity = 0;
+
+
         window.onscroll = function (e) {
+
+            isScrolledIntoView(el);
+
             // print "false" if direction is down and "true" if up
             console.log(this.oldScroll > this.scrollY);
+            menuCounter++;
 
-            if (this.oldScroll < this.scrollY && document.getElementById("project2-img").offsetParent !== null) {
-                counter++;
-                document.getElementById("tl").src = "img/intro/" + counter + ".jpg";
+            if (menuCounter >= 10) {
+                document.getElementById("menu").style.opacity = (menuCounter - 80) / 10;
+            }
 
-                if (counter >= 290) {
-                    counter = 0;                 
+            if (this.oldScroll < this.scrollY && $('#tl').is(':visible')) {
+                introCounter++;
+                console.log("Display image " + introCounter);
+                document.getElementById("tl").src = "img/intro/" + introCounter + ".jpg";
+
+                if (introCounter >= 290) {
+                    introCounter = 0;
+                }
+
+            }
+            else {
+                introCounter--;
+                document.getElementById("tl").src = "img//intro/" + introCounter + ".jpg";
+
+                if (introCounter <= 0) {
+                    introCounter = 290;
+                }
+            }
+
+            if (this.oldScroll < this.scrollY) {
+                project1Counter++;
+                document.getElementById("project1-img").src = "img/project1/" + project1Counter + ".jpg";
+
+                if (project1Counter >= 160) {
+                    project1Counter = 0;
                 }
             }
             else {
-                counter--;
-                document.getElementById("tl").src = "img//intro/" + counter + ".jpg";
-               
-                if (counter <= 0) {
-                    counter = 290;              
+                project1Counter--;
+                document.getElementById("project1-img").src = "img/project1/" + project1Counter + ".jpg";
+
+                if (project1Counter <= 0) {
+                    project1Counter = 160;
                 }
             }
 
-            if (this.oldScroll < this.scrollY && document.getElementById("project2-img").offsetParent !== null) {
-                counterProj1++;
-                document.getElementById("project1-img").src = "img/project1/" + counterProj1 + ".jpg";
-         
-                if (counterProj1 >= 160) {
-                    counterProj1 = 0;                   
-                }
-            }
-            else {
-                counterProj1--;
-                document.getElementById("project1-img").src = "img/project1/" + counterProj1 + ".jpg";
-               
-                if (counterProj1 <= 0) {
-                    counterProj1 = 160;                    
-                }
-            }
+            if (this.oldScroll < this.scrollY) {
+                project2Counter++;
+                document.getElementById("project2-img").src = "img/project2/" + project2Counter + ".jpg";
 
-            if (this.oldScroll < this.scrollY && document.getElementById("project2-img").offsetParent !== null) {
-                counterProj2++;
-                document.getElementById("project2-img").src = "img/project2/" + counterProj2 + ".jpg";
-               
-                if (counterProj2 >= 100) {
-                    counterProj2 = 0;                    
+                if (project2Counter >= 100) {
+                    project2Counter = 0;
                 }
             }
             else {
-                counterProj2--;
-                document.getElementById("project2-img").src = "img/project2/" + counterProj2 + ".jpg";
-                
-                if (counterProj2 <= 0) {
-                    counterProj2 = 100;                    
+                project2Counter--;
+                document.getElementById("project2-img").src = "img/project2/" + project2Counter + ".jpg";
+
+                if (project2Counter <= 0) {
+                    project2Counter = 100;
                 }
             }
             this.oldScroll = this.scrollY;
         }
+
+
 
     </script>
 

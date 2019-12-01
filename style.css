@@ -1,10 +1,28 @@
 #menu{
-    display: flex;  
-    padding: 15px 0px;    
-    justify-content: space-between;
-    align-items: center;
+    
+       
+  
+    
+   display: flex;  
+     
+    position: fixed;
+    align-items: center; 
+    justify-content: space-around;
+    background-color: white;
+    width: 100%;
+    z-index: 2;
+    
+    
+     
+}
+
+#title{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 2em;
     margin-left: 10%;
-    margin-right: 10%;            
+    margin-right: 10%;  
 }
 
 #menu ul{
@@ -17,11 +35,21 @@
     display: flex;
     flex-direction: row;
     padding-left: 5px;
+    
+        
+}
+
+#menu #logo-text{
+    
+    display: flex;
+    justify-content: right;
+
 }
 
 #logo-text p{        
     /* temporary solution */
    margin:10px;
+
    
 }
 
@@ -37,12 +65,17 @@
 body { 
     font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
     margin: 0px;
+    
 }
 
 
 #logo-text img{
     width: 50px;
     height: 50%;
+}
+
+#logo-text p{
+    white-space: nowrap;
 }
 
 .page-list ul{
@@ -60,9 +93,14 @@ body {
     width:100%;
     
     
+    
+}
+
+a{
+    text-decoration: none;
 }
 #intro img{
-    width:inherit;
+    width:100vw;
     height: 100vh;
     object-fit: cover;
 }
@@ -83,8 +121,13 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: start;
-    padding: 30px 0px;
-    margin-bottom: 20px;
+  
+    
+}
+
+#project1-text{    
+    
+   max-height: 80%;
     
 }
 
@@ -93,8 +136,7 @@ body {
     display: flex;
     flex-direction: row;    
     justify-content: flex-end;
-    padding: 30px 0px;
-    margin-bottom: 20px;
+    
    
 }
 
@@ -102,23 +144,31 @@ h1, h4, h2{
     margin: 0px;
 }
 h1 {
-    font-size: 50px;;
+    font-size: 2.5rem;;
 }
 
 h2 {
-    font-size: 30px;;
+    font-size: 1.5rem;;
+}
+
+h4{
+    font-size: 1rem;;
 }
 
 main{
     margin: 0% 10%;  
 }
 
-footer{
-    
+footer{    
     background-color: lightblue;    
-    
-      
-    
+    margin-top: -5%;
+    padding-bottom:35px;
+    padding-top:35px;
+    z-index: 2;
+}
+
+footer p{    
+    font-size: 1em;
 }
 
 #footer-wrapper{
@@ -135,7 +185,6 @@ footer{
 }
 
 p{
-    font-weight: 400;
 }
 
 #social img{
@@ -241,3 +290,13 @@ p{
         justify-content: center;
     }
 }
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .sticky + .content {
+    padding-top: 60px;
+  }
