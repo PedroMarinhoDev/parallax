@@ -1,8 +1,9 @@
 #menu{
     
        
-  
-    
+    background: rgb(96,102,205);
+background: linear-gradient(90deg, rgba(96,102,205,1) 8%, rgba(87,47,167,0.8550770650056898) 48%, rgba(129,50,214,1) 90%);
+
    display: flex;  
      
     position: fixed;
@@ -14,6 +15,12 @@
     
     
      
+}
+h1{
+    background: -webkit-linear-gradient(90deg, rgba(96,102,205,1) 8%, rgba(87,47,167,0.8550770650056898) 48%, rgba(129,50,214,1) 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+   
 }
 
 #title{
@@ -39,6 +46,12 @@
         
 }
 
+#logo-text img     {   
+filter: invert(1);
+   
+       
+}
+
 #menu #logo-text{
     
     display: flex;
@@ -49,6 +62,8 @@
 #logo-text p{        
     /* temporary solution */
    margin:10px;
+   
+   font-size: 1em;
 
    
 }
@@ -100,7 +115,7 @@ a{
     text-decoration: none;
 }
 #intro img{
-    width:100vw;
+    width:100%;
     height: 100vh;
     object-fit: cover;
 }
@@ -160,7 +175,8 @@ main{
 }
 
 footer{    
-    background-color: lightblue;    
+    background: rgb(96,102,205);
+    background: linear-gradient(90deg, rgba(96,102,205,1) 8%, rgba(87,47,167,0.8550770650056898) 48%, rgba(129,50,214,1) 90%);
     margin-top: -5%;
     padding-bottom:35px;
     padding-top:35px;
@@ -191,7 +207,7 @@ p{
     width: 25px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     
     #menu{
         padding: 10px 0px;
@@ -207,6 +223,7 @@ p{
         flex-direction: column;
         width: inherit;
         height: inherit;
+        margin: 10px;
         
     }
     #project-2{
@@ -214,7 +231,7 @@ p{
         width: inherit;
         padding-bottom: 10%;
         padding-top: -10%;
-        
+        margin: 10px;
         
     }
 
@@ -289,8 +306,13 @@ p{
         text-align: center;
         justify-content: center;
     }
-}
 
+   
+}
+a {
+    color: white;
+    font-weight: lighter;
+}
 .sticky {
     position: fixed;
     top: 0;
@@ -299,4 +321,17 @@ p{
 
   .sticky + .content {
     padding-top: 60px;
+  }
+
+  #footer-info{
+    filter: invert(1);
+  }
+
+  #footer-info p{
+    
+    font-size: 0.7em;
+  }
+
+  h2{
+      color: rgb(146, 146, 146);
   }

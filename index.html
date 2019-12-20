@@ -18,7 +18,10 @@
 
         <div id="logo-text">
             <img src="img/logo.png" alt="Logo">
-            <p>The Time Lapser</p>
+            <a href="index.html">
+                <p>The Time Lapser</p>
+            </a>
+
         </div>
 
         <nav class="page-list">
@@ -37,8 +40,6 @@
 
     </section>
 
-
-
     <h1 id="title" class="rellax" data-rellax-speed="-2">Timelapse Projects</h1>
 
     <main id="content" class="rellax" data-rellax-speed="-3">
@@ -52,7 +53,7 @@
                 <h4>Location</h4>
                 <h2>Berlin</h2>
                 <h4>Nmber of Photos: </h4>
-                <h2>2500</h2>
+                <h2 id="num-p1">2500</h2>
             </div>
 
         </section>
@@ -64,7 +65,7 @@
                 <h4>Location: </h4>
                 <h2>World</h2>
                 <h4>Nmber of Photos: </h4>
-                <h2>2500</h2>
+                <h2 id="num-p2">2500</h2>
             </div>
 
             <img id="project2-img" src="img/project2/0.jpg" alt="Project Timelapse Snippet">
@@ -100,49 +101,52 @@
     </footer>
 
     <script>
+
         var el = document.getElementById("tl");
 
 
-        function isScrolledIntoView(el) {
-            var rect = el.getBoundingClientRect();
-            var elemTop = rect.top;
-            var elemBottom = rect.bottom;
-
-            // Only completely visible elements return true:
-            var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
-            // Partially visible elements return true:
-            //isVisible = elemTop < window.innerHeight && elemBottom >= 0;
-            return isVisible;
-
-            console.log("Is visible: " + isVisible)
-        }
+      
 
         let introCounter = 2;
         let menuCounter = 2;
         let project1Counter = 2;
         let project2Counter = 2;
         let lastScrollTop = 0;
+        let imageCounter1 = 525
+        let imageCounter2 = 337
 
 
         document.getElementById("menu").style.opacity = 0;
 
 
-        window.onscroll = function (e) {
-
-            isScrolledIntoView(el);
+        window.onscroll = function (e) {            
 
             // print "false" if direction is down and "true" if up
             console.log(this.oldScroll > this.scrollY);
             menuCounter++;
 
+            if (menuCounter < 130) {
+                document.getElementById("num-p1").innerHTML = 1000 + imageCounter1 + menuCounter;
+            }
+
+            if (menuCounter < 250) {
+                document.getElementById("num-p2").innerHTML = 1000 + imageCounter2 + menuCounter;
+            }
+
             if (menuCounter >= 10) {
                 document.getElementById("menu").style.opacity = (menuCounter - 80) / 10;
             }
 
-            if (this.oldScroll < this.scrollY && $('#tl').is(':visible')) {
+
+
+            if (this.oldScroll < this.scrollY) {
+
                 introCounter++;
                 console.log("Display image " + introCounter);
                 document.getElementById("tl").src = "img/intro/" + introCounter + ".jpg";
+
+                document.getElementById("tl").src = "img/intro/" + introCounter + ".jpg";
+                id = "num-p1"
 
                 if (introCounter >= 290) {
                     introCounter = 0;
@@ -151,7 +155,7 @@
             }
             else {
                 introCounter--;
-                document.getElementById("tl").src = "img//intro/" + introCounter + ".jpg";
+                document.getElementById("tl").src = "img/intro/" + introCounter + ".jpg";
 
                 if (introCounter <= 0) {
                     introCounter = 290;
