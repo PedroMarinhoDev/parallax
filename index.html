@@ -102,11 +102,6 @@
 
     <script>
 
-        var el = document.getElementById("tl");
-
-
-      
-
         let introCounter = 2;
         let menuCounter = 2;
         let project1Counter = 2;
@@ -115,13 +110,79 @@
         let imageCounter1 = 525
         let imageCounter2 = 337
 
-
         document.getElementById("menu").style.opacity = 0;
+        var el = document.getElementById("tl");
+    </script>
 
 
-        window.onscroll = function (e) {            
 
-            // print "false" if direction is down and "true" if up
+
+
+
+
+
+
+
+    <script>
+
+        window.onscroll = function (e) {
+
+            // True goes up false goes down
+            if (this.oldScroll < this.scrollY) {
+
+                introCounter++;
+
+                console.log(introCounter);
+
+                document.getElementById("tl").src = "img/intro/" + introCounter + ".jpg"
+
+                if (introCounter >= 290) {
+                    introCounter = 0;
+                }
+
+            }
+
+            else {
+                introCounter--;
+
+                console.log(introCounter);
+
+                document.getElementById("tl").src = "img/intro/" + introCounter + ".jpg"
+
+                if (introCounter >= 290) {
+                    introCounter = 0;
+                }
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             console.log(this.oldScroll > this.scrollY);
             menuCounter++;
 
@@ -139,28 +200,10 @@
 
 
 
-            if (this.oldScroll < this.scrollY) {
 
-                introCounter++;
-                console.log("Display image " + introCounter);
-                document.getElementById("tl").src = "img/intro/" + introCounter + ".jpg";
 
-                document.getElementById("tl").src = "img/intro/" + introCounter + ".jpg";
-                id = "num-p1"
 
-                if (introCounter >= 290) {
-                    introCounter = 0;
-                }
 
-            }
-            else {
-                introCounter--;
-                document.getElementById("tl").src = "img/intro/" + introCounter + ".jpg";
-
-                if (introCounter <= 0) {
-                    introCounter = 290;
-                }
-            }
 
             if (this.oldScroll < this.scrollY) {
                 project1Counter++;
