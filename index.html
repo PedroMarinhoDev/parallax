@@ -102,146 +102,61 @@
 
     <script>
 
-        let introCounter = 2;
-        let menuCounter = 2;
-        let project1Counter = 2;
-        let project2Counter = 2;
-        let lastScrollTop = 0;
-        let imageCounter1 = 525
-        let imageCounter2 = 337
+        var scrollCounter = 2;
+        var menuCounter = 0;
 
+        // Hide menu by default
         document.getElementById("menu").style.opacity = 0;
-        var el = document.getElementById("tl");
-    </script>
-
-
-
-
-
-
-
-
-
-
-    <script>
+     
 
         window.onscroll = function (e) {
 
-            // True goes up false goes down
-            if (this.oldScroll < this.scrollY) {
-
-                introCounter++;
-
-                console.log(introCounter);
-
-                document.getElementById("tl").src = "img/intro/" + introCounter + ".jpg"
-
-                if (introCounter >= 290) {
-                    introCounter = 0;
-                }
-
-            }
-
-            else {
-                introCounter--;
-
-                console.log(introCounter);
-
-                document.getElementById("tl").src = "img/intro/" + introCounter + ".jpg"
-
-                if (introCounter >= 290) {
-                    introCounter = 0;
-                }
-
-            }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            console.log(this.oldScroll > this.scrollY);
+            // Display the menu after a number of scrolls
             menuCounter++;
-
-            if (menuCounter < 130) {
-                document.getElementById("num-p1").innerHTML = 1000 + imageCounter1 + menuCounter;
-            }
-
-            if (menuCounter < 250) {
-                document.getElementById("num-p2").innerHTML = 1000 + imageCounter2 + menuCounter;
-            }
-
             if (menuCounter >= 10) {
                 document.getElementById("menu").style.opacity = (menuCounter - 80) / 10;
             }
-
-
-
-
-
-
-
-
+            
+            // Get if the user is scrolling down
             if (this.oldScroll < this.scrollY) {
-                project1Counter++;
-                document.getElementById("project1-img").src = "img/project1/" + project1Counter + ".jpg";
 
-                if (project1Counter >= 160) {
-                    project1Counter = 0;
+                // Increase the counter
+                scrollCounter++;
+
+                // * For future development, add condition here so that it only executes if the element is being displayed.
+                
+                // Change images forward
+                document.getElementById("tl").src = "img/intro/" + scrollCounter + ".jpg";
+                document.getElementById("project1-img").src = "img/project1/" + scrollCounter + ".jpg";
+                document.getElementById("project2-img").src = "img/project2/" + scrollCounter + ".jpg";
+
+                // Start over image sequence 
+                if (scrollCounter >= 100) {
+                    scrollCounter = 0;
                 }
+
             }
+            // If the user is not scrolling down, but scrolling up instead
             else {
-                project1Counter--;
-                document.getElementById("project1-img").src = "img/project1/" + project1Counter + ".jpg";
 
-                if (project1Counter <= 0) {
-                    project1Counter = 160;
+                // Decrease the counter
+                scrollCounter--;
+
+                // * For future development, add condition here so that it only executes if the element is being displayed.
+
+                // Change images backwards
+                document.getElementById("tl").src = "img/intro/" + scrollCounter + ".jpg";
+                document.getElementById("project1-img").src = "img/project1/" + scrollCounter + ".jpg";
+                document.getElementById("project2-img").src = "img/project2/" + scrollCounter + ".jpg";
+
+                if (scrollCounter <= 0) {
+                    scrollCounter = 100;
                 }
             }
 
-            if (this.oldScroll < this.scrollY) {
-                project2Counter++;
-                document.getElementById("project2-img").src = "img/project2/" + project2Counter + ".jpg";
-
-                if (project2Counter >= 100) {
-                    project2Counter = 0;
-                }
-            }
-            else {
-                project2Counter--;
-                document.getElementById("project2-img").src = "img/project2/" + project2Counter + ".jpg";
-
-                if (project2Counter <= 0) {
-                    project2Counter = 100;
-                }
-            }
             this.oldScroll = this.scrollY;
+
         }
-
-
 
     </script>
 

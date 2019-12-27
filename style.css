@@ -1,26 +1,19 @@
-#menu{
-    
-       
+#menu{       
     background: rgb(96,102,205);
-background: linear-gradient(90deg, rgba(96,102,205,1) 8%, rgba(87,47,167,0.8550770650056898) 48%, rgba(129,50,214,1) 90%);
-
-   display: flex;  
-     
+    background: linear-gradient(90deg, rgba(96,102,205,1) 8%, rgba(87,47,167,0.8550770650056898) 48%, rgba(129,50,214,1) 90%);
+    display: flex;       
     position: fixed;
     align-items: center; 
     justify-content: space-around;
     background-color: white;
     width: 100%;
-    z-index: 2;
-    
-    
-     
+    z-index: 2;     
 }
+
 h1{
     background: -webkit-linear-gradient(90deg, rgba(96,102,205,1) 8%, rgba(87,47,167,0.8550770650056898) 48%, rgba(129,50,214,1) 90%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-   
+  -webkit-text-fill-color: transparent;   
 }
 
 #title{
@@ -36,19 +29,16 @@ h1{
     list-style: none;    
 }
 
-     #logo-text{        
-     /* temporary solution */
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    padding-left: 5px;
-    
-        
+#logo-text{        
+/* temporary solution */
+text-align: center;
+display: flex;
+flex-direction: row;
+padding-left: 5px;        
 }
 
 #logo-text img     {   
-filter: invert(1);
-   
+filter: invert(1); 
        
 }
 
@@ -184,7 +174,7 @@ footer{
 }
 
 footer p{    
-    font-size: 1em;
+    font-size: 0.7em;
 }
 
 #footer-wrapper{
